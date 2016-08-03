@@ -21,13 +21,20 @@ public class StudentTest {
   @Test
   public void testValidStudentRecord() throws Exception{
 
+    //1. initialise object mapper
     ObjectMapper mapper = new ObjectMapper();
-    Student student = mapper.readValue(new FileInputStream("src/test/resources/ValidStudent.json"), Student.class);
 
+    //2. load json
+    FileInputStream jsonInputStream = new FileInputStream("src/test/resources/ValidStudent.json");
+
+    //3. map json to object
+    Student student = mapper.readValue(jsonInputStream, Student.class);
+
+    //4. create a validator
     ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
     Validator validator = factory.getValidator();
 
-    //3. Perform validation
+    //5. validations
     Set<ConstraintViolation<Student>> validationResults = validator.validate(student);
 
     Assert.assertTrue("Expected no validation failures but found some",validationResults.isEmpty());
