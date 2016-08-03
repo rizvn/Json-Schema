@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://rizvn.com/student.jsd",
+  "description": "schema defining a student",
+  "type": "object",
+
+  "properties": {
+    "name":   {"type": "string"},
+    "gender": {"enum": ["male", "female"]},
+    "courses" : {
+      "type": "array",
+      "items": {
+       "$ref": "#/definitions/course" //reference definitions here
+      },
+      "minItems": 1,
+      "maxItems": 4
+    },
+    "required": ["name", "gender", "courses"]
+  },
+
+  "definitions": {
+    "course": {
+      "type" : "object",
+      "properties": {
+        "name": { "type":"string" },
+        "title": {"type": "string"}
+      },
+      "required": ["name", "title"]
+    }
+  }
+}
