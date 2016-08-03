@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "An Address following the convention of http://microformats.org/wiki/hcard",
+
+    //Type of this object
+    "type": "object",
+
+    //properties this object can have
+    "properties": {
+        "post-office-box": { "type": "string" },
+        "extended-address": { "type": "string" },
+        "street-address": { "type": "string" },
+        "locality":{ "type": "string" },
+        "region": { "type": "string" },
+        "postal-code": { "type": "string" },
+        "country-name": { "type": "string"}
+    },
+
+    //properties that must be provided
+    "required": ["locality", "region", "country-name"],
+
+
+    "dependencies": {
+        //post-office box can only be provided if street address is provided
+        "post-office-box": ["street-address"],
+        "extended-address": ["street-address"]
+    }
+}
