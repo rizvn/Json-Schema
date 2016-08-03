@@ -6,16 +6,21 @@
 
   "properties": {
     "name":   {"type": "string"},
+    "age": {
+      "type": "integer",
+      "description": "Age in years",
+      "minimum": 18
+    },
     "gender": {"enum": ["male", "female"]},
-    "courses" : {
+    "courses_taken" : {
       "type": "array",
       "items": {
-       "$ref": "#/definitions/course" //reference definitions here
+       "$ref": "#/definitions/course" //reference definitions defined below
       },
       "minItems": 1,
       "maxItems": 4
     },
-    "required": ["name", "gender", "courses"]
+    "required": ["name", "gender", "courses_taken"]
   },
 
   "definitions": {

@@ -1,0 +1,9 @@
+{
+  "name": "Bob",
+  "age": 22,
+  "gender": "male",
+  "courses_taken":[
+    {"name": "M01", "title": "Intro to Maths"},
+    {"name": "P01", "title": "Intro to Physics"}
+  ]
+}
