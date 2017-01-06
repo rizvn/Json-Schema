@@ -1,0 +1,7 @@
+{
+  "getSupplier": {
+    "request": {
+     "customerRef": "123"
+    }
+  }
+}
