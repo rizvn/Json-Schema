@@ -13,7 +13,7 @@
       },
 
      "getAddress":{
-        "description": "Command to request address information for a post code",
+        "description": "Request address information for a post code",
         "type": "object",
         "properties" : {
           "postcode": { "type": "string", "description": "The postcode for which to find address" },
@@ -31,7 +31,7 @@
 
 
      "getSupplier":{
-         "description": "Command to request supplier information for a customer",
+         "description": "Request supplier information for a customer",
          "type": "object",
          "properties" : {
             "customerRef": { "type": "string", "description": "customer reference" },
