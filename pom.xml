@@ -79,6 +79,8 @@
           <!-- output folder folder for the generated code -->
           <outputDirectory>target/generated-sources/jsonpojo</outputDirectory>
           <annotationStyle>jackson2</annotationStyle>
+
+          <!-- this is required for validating json -->
           <includeJsr303Annotations>true</includeJsr303Annotations>
         </configuration>
         <executions>
