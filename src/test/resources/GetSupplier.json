@@ -1,4 +1,5 @@
 {
+  "version": 3,
   "getSupplier": {
     "request": {
      "customerRef": "123"

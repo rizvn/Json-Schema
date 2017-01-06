@@ -5,6 +5,7 @@
   "type": "object",
 
   "properties": {
+     "version": {"type" : "integer", "minimum": 1, "maximum": 1},
 
      "getAddress":{
         "type": "object",
@@ -44,6 +45,7 @@
              }
             }
          }
-     }
+     },
+     "required": [ "version" ]
   }
 }
