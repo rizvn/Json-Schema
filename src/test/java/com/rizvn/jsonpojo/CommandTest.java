@@ -2,7 +2,6 @@ package com.rizvn.jsonpojo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rizvan.json.Command;
-import com.rizvan.json.Student;
 import org.junit.Assert;
 import org.junit.Test;
 
