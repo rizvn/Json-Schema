@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://rizvn.com/command.jsd",
+  "description": "schema defining a command",
+  "type": "object",
+
+  "properties": {
+     "version": {
+        "description": "specify schema version number",
+        "type" : "integer",
+        "minimum": 1,
+        "maximum": 1
+      },
+
+     "getAddress":{
+        "description": "Command to request address information for a post code",
+        "type": "object",
+        "properties" : {
+          "postcode": { "type": "string", "description": "The postcode for which to find address" },
+          "response": {
+            "type": "object",
+            "properties": {
+              "streetName" : "string",
+              "city" : "string",
+              "county" : "string"
+            }
+          }
+        },
+        "required": [ "postcode" ]
+     },
+
+
+     "getSupplier":{
+         "description": "Command to request supplier information for a customer",
+         "type": "object",
+         "properties" : {
+            "customerRef": { "type": "string", "description": "customer reference" },
+            "response": {
+             "type": "object",
+             "properties": {
+               "supplierName" : "string",
+               "supplierRef" : "string"
+             }
+            }
+         },
+         "required": [ "customerRef" ]
+     },
+     "required": [ "version" ]
+  }
+}

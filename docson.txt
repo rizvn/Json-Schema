@@ -1,0 +1,4 @@
+copy command.jsd schema into docson folder
+open docson/index.html in browser (hosted on in web server)
+
+in the input field enter command.jsd
