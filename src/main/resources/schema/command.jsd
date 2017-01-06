@@ -16,12 +16,7 @@
         "description": "Command to request address information for a post code",
         "type": "object",
         "properties" : {
-          "request": {
-            "type": "object",
-            "properties": {
-              "postcode": { "type": "string", "description": "The postcode for which to find address" }
-            }
-          },
+          "postcode": { "type": "string", "description": "The postcode for which to find address" },
           "response": {
             "type": "object",
             "properties": {
@@ -31,7 +26,7 @@
             }
           }
         },
-        "required": [ "request" ]
+        "required": [ "postcode" ]
      },
 
 
@@ -39,12 +34,7 @@
          "description": "Command to request supplier information for a customer",
          "type": "object",
          "properties" : {
-           "request": {
-             "type": "object",
-             "properties": {
-               "customerRef": { "type": "string" }
-             }
-            },
+            "customerRef": { "type": "string", "description": "customer reference" },
             "response": {
              "type": "object",
              "properties": {
@@ -53,7 +43,7 @@
              }
             }
          },
-         "required": [ "request" ]
+         "required": [ "customerRef" ]
      },
      "required": [ "version" ]
   }

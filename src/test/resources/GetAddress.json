@@ -1,8 +1,6 @@
 {
   "version": 1,
   "getAddress": {
-    "request": {
-     "postcode": "PR6 7EN"
-    }
+    "postcode": "PR6 7EN"
   }
 }

@@ -17,27 +17,24 @@ import java.util.Set;
  */
 public class CommandTest {
 
+  ObjectMapper mapper = new ObjectMapper();
+  ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+
   @Test
   public void testCommandBinding() throws Exception
   {
-    ObjectMapper mapper = new ObjectMapper();
-
     Command addressCommand =  mapper.readValue(new File("src/test/resources/GetAddress.json"), Command.class);
-    Assert.assertEquals(addressCommand.getGetAddress().getRequest().getPostcode(), "PR6 7EN");
+    Assert.assertEquals("PR6 7EN", addressCommand.getGetAddress().getPostcode());
 
     Command supplierCommand =  mapper.readValue(new File("src/test/resources/GetSupplier.json"), Command.class);
-    Assert.assertEquals(supplierCommand.getGetSupplier().getRequest().getCustomerRef(), "123");
+    Assert.assertEquals("123", supplierCommand.getGetSupplier().getCustomerRef());
   }
 
   @Test
   public void testCommandBindingAndValidationSuccess() throws Exception
   {
-    ObjectMapper mapper = new ObjectMapper();
-
     Command cmd =  mapper.readValue(new File("src/test/resources/GetAddress.json"), Command.class);
-
-    ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-    Validator validator = factory.getValidator();
+    Validator validator = validatorFactory.getValidator();
 
     Set<ConstraintViolation<Command>> validationResults = validator.validate(cmd);
 
@@ -54,7 +51,6 @@ public class CommandTest {
     ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
     Validator validator = factory.getValidator();
 
-    //5. validations
     Set<ConstraintViolation<Command>> validationResults = validator.validate(cmd);
 
     Assert.assertFalse("Expected no validation failures but found some",validationResults.isEmpty());
